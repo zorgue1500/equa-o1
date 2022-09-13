@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        input{
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Equação do primeiro grau</h1>
+
+    <p>X
+         <select name="operacoes" id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select> 
+      <input type="number" id="n"> = <input type="number" id="re"></p>
+    <button onclick="x()">Valor de X</button>
+    <p>X = <span></span></p>
+
+    <script>
+        var n = document.querySelector('#n')
+        var re = document.querySelector('#re')
+        var op = document.querySelector('#op')
+        var resultado = document.querySelector('span')
+
+        function x(){
+
+            if(op.value=="+"){
+                var eq = parseInt(re.value) - parseInt(n.value)
+                resultado.innerHTML=(+eq)
+            }
+            else if(op.value=="-"){
+                var eq = parseInt(re.value) + parseInt(n.value)
+                resultado.innerHTML=(+eq)
+            }
+            else if(op.value=="*"){
+                var eq = parseInt(re.value) / parseInt(n.value)
+                resultado.innerHTML=(+eq)
+            }
+            else if(op.value=="/"){
+                var eq = parseInt(re.value) * parseInt(n.value)
+                resultado.innerHTML=(+eq)
+            }
+
+        }
+    </script>
+
+
+    
+</body>
+</html>
